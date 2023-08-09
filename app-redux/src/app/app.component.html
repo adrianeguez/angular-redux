@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Materias</h1>
+  <div class="row">
+    <div class="col-sm-6">
+      <button class="btn btn-warning" type="button" (click)="setearPeriodoActual()">
+        Setear periodo actual
+      </button>
+    </div>
+    <div class="col-sm-6">
+      <div class="border border-success p-2 m-2 text-center">
+        <p><strong>Periodo actual:</strong> {{periodoActualState$ | async}}</p>
+        <p><strong>Materia actual:</strong></p>
+        <p><strong>Nombre:</strong>{{(materiaActualState$ | async)?.nombre}}</p>
+        <p><strong>Descripcion:</strong>{{(materiaActualState$ | async)?.descripcion}}</p>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <button class="btn btn-success" type="button" (click)="anadirMateria()">
+        Anadir Materia
+      </button>
+    </div>
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-3 p-2" *ngFor="let materia of materiasState$ | async">
+          <div class="border border-primary p-2 m-2">
+
+            <div class="text-center">
+              <p><strong>Nombre:</strong>{{materia.nombre}}</p>
+              <p><strong>Descripcion:</strong>{{materia.descripcion}}</p>
+            </div>
+            <button class="btn btn-primary w-100" type="button" (click)="establecerMateriaActual(materia)">
+              Setear periodo actual
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
