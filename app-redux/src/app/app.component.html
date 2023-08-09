@@ -35,5 +35,21 @@
         </div>
       </div>
     </div>
+    <div class="col-sm-12">
+      <p>CARGANDO: {{cargando$ | async}}</p>
+      <button class="btn btn-warning" type="button" (click)="obtenerTodos()">
+        Obtener Todos
+      </button>
+    </div>
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-3" *ngFor="let todo of todosState$ | async">
+          <div class="border border-warning p-2 m-2 text-center">
+            <p><strong>ID:</strong>{{todo.id}}</p>
+            <p><strong>Titulo:</strong>{{todo.title}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

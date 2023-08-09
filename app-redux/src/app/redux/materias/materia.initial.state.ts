@@ -7,6 +7,6 @@ export const initialState:MateriaState =  {
     nombre: '',
     descripcion: '',
   },
-  periodoActual: '1',
+  periodoActual: '',
   cargando: false
 };

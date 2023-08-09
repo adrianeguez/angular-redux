@@ -4,6 +4,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {StoreModule} from "@ngrx/store";
 import {store} from "./redux/store";
+import {HttpClientModule} from "@angular/common/http";
+import {EffectsModule} from "@ngrx/effects";
+import {TodosEffect} from "./redux/materias/effects/todos.effect";
 
 @NgModule({
   declarations: [
@@ -12,9 +15,12 @@ import {store} from "./redux/store";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(store)
+    StoreModule.forRoot(store),
+    EffectsModule.forRoot(TodosEffect),
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
